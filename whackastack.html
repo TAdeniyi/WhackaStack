@@ -1,0 +1,119 @@
+
+<html>
+    <head>
+
+    <title>
+WhackaStack
+</title>
+
+<form action="http://www.referweb.net/uwgc/MatchList.aspx?c;;0;;;0;0;Consumer%20Services;Consumer%20Assistance%20and%20Protection;8;Credit%20Counseling">
+    <input type="submit" value="Free Credit Counseling" />
+</form> 
+
+<form action="https://www.experian.com/credit/loans/personal/">
+    <input type="submit" value="Personal Loan Recommendations" />
+</form>
+
+<form action="https://www.nerdwallet.com/blog/loans/car-loan-calculator/">
+    <input type="submit" value="Car Loan Recommendations" />
+</form>
+
+<form action="https://www.creditkarma.com/calculators/affordability">
+    <input type="submit" value="Home Affordability Recommendations" />
+</form>
+
+<form action="http://bizkids.com/clip/benefits-and-drawbacks-of-credit-cards">
+    <input type="submit" value="Credit 101 Biz Kids" />
+</form> 
+
+<form action="https://www.creditkarma.com/">
+    <input type="submit" value="Go to Credit Karma" />
+</form>
+
+<form action="https://www.creditsesame.com/">
+    <input type="submit" value="Go to Credit Sesame" />
+</form>
+<img src="whackastack8.png" alt="Credit Tip Key" width="250" height="250" alt="Credit Mistakes to Avoid Key">;
+
+        <style>
+
+
+            body{
+                background-color: #facb56;
+                height:100%;
+                width:95%;
+                overflow:hidden;	
+		
+
+            }
+            
+            .mole{
+                background-color:rgb(192,239,105);
+                border-radius:80px;
+                height:100%;
+                width:10%;
+                position:absolute;
+                top:100%;
+                background-image: url('whackastack8.png');
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            
+            #mole1 {left:15%;}
+            #mole2 {left:45%;}
+            #mole3 {left:75%;}
+            #mole4 {left:25%;}
+            #mole5 {left:85%;}
+           
+
+            .score{font-family:arial; font-size:60px; position:absolute; right:30px;}
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script>
+            jQuery(document).ready(function(){
+                $(".bg").css("background-image", "url('')");
+		var score=0;
+                
+                function game_over(){
+                    jQuery('.mole').animate({'top':'100%'},300);
+                    jQuery('.score').html('GAME OVER');
+                    jQuery('.score').append('<div class="try_again">TRY AGAIN</div>');
+		jQuery('.score').append('<div class="try_again">Check Out the Resources</div>');
+                }
+                
+                function start(){
+                    score=0;
+                    jQuery('.score').html('Score: ' + score);
+                    jQuery('.mole').animate({'top':'0%'},5000,function(){
+                        game_over();
+                        jQuery('.try_again').click(function(){start();});
+                });
+                }
+                
+                jQuery('.mole').hover(function(){
+                    
+                    jQuery(this).css('background-image','url(hurt.png)');
+                    jQuery(this).stop().animate({'top':'100%'},300,function(){
+                        
+                        score++;
+                        jQuery('.score').html('Score: ' + score);
+                        jQuery(this).css('background-image','url(whackastack8.png)');
+                        jQuery(this).animate({'top':'0%'},5000);
+                    }); 
+                    
+                });
+            start();                    
+       });
+        </script>
+    </head>
+    <body>
+        <div class="score">Score: 0</div>
+        <div class="mole" id="mole1"></div>
+        <div class="mole" id="mole2"></div>  
+        <div class="mole" id="mole3"></div>
+	  <div class="mole" id="mole4"></div>  
+        <div class="mole" id="mole5"></div>
+    </body>
+</html>?
